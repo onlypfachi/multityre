@@ -11,16 +11,16 @@ const imageStyle = {
 ---
 
 <div
-    class="py-48 bg-cover m-8 bg-gray-700 bg-blend-multiply relative group"
+    class="bg-cover bg-center bg-gray-700 bg-blend-multiply relative group p-6 sm:p-8 flex flex-col justify-end min-h-[18rem] sm:min-h-[22rem]"
     style={imageStyle}
 >
     <h2
-        class="text-white uppercase text-4xl italic transition-opacity duration-500 opacity-100 group-hover:opacity-0"
+        class="text-white uppercase text-3xl sm:text-4xl italic transition-opacity duration-500 opacity-100 md:group-hover:opacity-0"
     >
         {text}
     </h2>
     <p
-        class="text-white text-xl transition-opacity duration-500 opacity-0 group-hover:opacity-100"
+        class="text-white text-base sm:text-xl leading-relaxed mt-3 transition-opacity duration-500 opacity-100 md:opacity-0 md:group-hover:opacity-100"
     >
         {details}
     </p>

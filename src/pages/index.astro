@@ -3,26 +3,26 @@ import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
 import About from "../components/About.astro";
 import Offers from "../components/Offers.astro";
+import Pricelist from "../components/Pricelist.astro";
 import TopOffers from "../components/TopOffers.astro";
 import HeroFooter from "../components/HeroFooter.astro";
 ---
 
-<Layout title="Multi Tyre Company" >
-<main class="min-w-[34rem]">
+<Layout title="MultiTyre Company">
+    <main>
         <!-- Add Call To action, company Name and Button text2 -->
         <Hero
-            callToAction="Multi Tyre Company"
-            ,
+            callToAction="MultiTyre Company"
             buttonText="askme@multityre.co.zw"
-            companyName="Multi Tyre Company Zimbabwe"
+            companyName="MultiTyre Company Zimbabwe"
         />
         <About
             linkText="/"
             imageOne="trye-details.jpeg"
-            ,
             imageTwo="TireDetail.webp"
         />
         <Offers />
+        <Pricelist />
         <TopOffers />
         <HeroFooter callToAction="Get in Touch Today" />
     </main>

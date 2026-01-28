@@ -1,54 +1,59 @@
 ---
 const offers = [
     {
-       image: "616.jpeg",
-        author: "Enduro Sport",
-        price:"78.99",
-        age: 31,
-        quote: "If you’re after top tyres at low prices, you’re in the right place. Runway Tyres offers good quality tyres without compromising on safety and performance.",
+        image: "616.jpeg",
+        author: "Windforce",
+        price: "45",
+        quote: "Quality tyres at competitive prices. MultiTyre offers multiple brands without compromising on safety and performance.",
     },
     {
         image: "926.jpeg",
-        author: "Enduro Sport",
-        price:"78.99",
-        age: 28,
-        quote: "If you’re after top tyres at low prices, you’re in the right place. Runway Tyres offers good quality tyres without compromising on safety and performance.",
+        author: "Kapsen",
+        price: "50",
+        quote: "Looking for reliable tyres? We stock a wide range of sizes and brands to keep you safe on Zimbabwe's roads.",
     },
     {
-       image: "636.png",
-        author: "Enduro Sport",
-        price:"78.99",
-        age: 44,
-        quote: "If you’re after top tyres at low prices, you’re in the right place. Runway Tyres offers good quality tyres without compromising on safety and performance.",
+        image: "636.png",
+        author: "Tracmax",
+        price: "55",
+        quote: "Premium brands also available on inquiry: Continental, Bridgestone, Michelin, Pirelli and more.",
     },
 ];
 ---
 
 <section class="py-12">
-    <h1 class="yellowText text-5xl italic uppercase text-center">
-        Top Offers
-    </h1>
-    <div class="grid grid-cols-1 md:grid-cols-3">
-        {
-            offers.map((profile) => (
-                <div class="m-4">
-                    <img
-                        src={"/images/" + profile.image}
-                        alt="Top_offer"
-                        class="object-cover w-full h-64"
-                    />
-                    <div class="yellowBG p-8">
-                        <p class="pb-4 font-bold">{profile.quote}</p>
-                        <small>
-                            {profile.author},{profile.age}
-                        </small>
-                        <p class="pb-4 font-bold">Prices from $ {profile.price}</p>
+    <div class="mx-auto max-w-screen-xl px-4">
+        <h1
+            class="yellowText text-4xl sm:text-5xl italic uppercase text-center"
+        >
+            Top Offers
+        </h1>
+
+        <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+            {
+                offers.map((profile) => (
+                    <div>
+                        <img
+                            src={"/images/" + profile.image}
+                            alt="Top_offer"
+                            class="object-cover w-full h-56 sm:h-64"
+                        />
+                        <div class="yellowBG p-6 sm:p-8">
+                            <p class="pb-4 font-bold">{profile.quote}</p>
+                            <small class="font-medium">{profile.author}</small>
+                            <p class="pt-4 font-bold">
+                                Prices from $ {profile.price}
+                            </p>
+                        </div>
                     </div>
-                </div>
-            ))
-        }
-        <button class="yellowBG p-2  text-black font-bold ml-4">
-        View more offers..
-        </button>
+                ))
+            }
+        </div>
+
+        <div class="mt-6 text-center">
+            <button class="yellowBG px-6 py-3 text-black font-bold uppercase">
+                View more offers..
+            </button>
+        </div>
     </div>
 </section>

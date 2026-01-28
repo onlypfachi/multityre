@@ -1,5 +1,4 @@
 ---
-import { Icon } from 'astro-icon/components'
 interface Props {
     callToAction: string;
     buttonText: string;
@@ -18,21 +17,36 @@ const bgStyle = {
     class="bg-cover bg-no-repeat bg-gray-400 bg-blend-multiply"
     style={bgStyle}
 >
-    <nav class="text-white uppercase pt-8 p-4 font-bold2">
-        <ul>
-            <li>{companyName}</li>
-        </ul>
+    <nav class="text-white uppercase pt-6 sm:pt-8">
+        <div class="mx-auto max-w-screen-xl px-4 font-bold2">
+            <ul>
+                <li>{companyName}</li>
+            </ul>
+        </div>
     </nav>
-    <div class="px-4 mx-auto max-w-screen-xl text-center py-36 text-white">
-        <h1 class="font-extrabold text-9xl tracking-wide mb-4 uppercase italic">
+    <div class="mx-auto max-w-screen-xl px-4 text-center py-20 sm:py-28 lg:py-36 text-white">
+        <h1 class="font-extrabold text-5xl sm:text-7xl lg:text-9xl tracking-wide mb-4 uppercase italic leading-none">
             {callToAction}
         </h1>
-       <button class="yellowBG p-2 uppercase text-black font-bold">
-        +263 772 288 018
-        </button >
-        <button class="yellowBG p-2  text-black font-bold ml-4">
-        {buttonText}
-        </button>
-
+        <div class="mt-6 flex flex-col sm:flex-row gap-4 justify-center flex-wrap">
+            <a
+                href="tel:+263772288018"
+                class="yellowBG p-3 uppercase text-black font-bold"
+            >
+                0772 288 018
+            </a>
+            <a
+                href="tel:+263774442922"
+                class="yellowBG p-3 uppercase text-black font-bold"
+            >
+                0774 442 922
+            </a>
+            <a
+                href={"mailto:" + buttonText}
+                class="yellowBG p-3 text-black font-bold break-all sm:break-normal"
+            >
+                {buttonText}
+            </a>
+        </div>
     </div>
 </header>

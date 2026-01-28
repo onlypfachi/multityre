@@ -19,13 +19,18 @@ const offers = [
 ];
 ---
 
-<section class="py-12 text-center">
-    <h1 class="yellowText text-5xl italic uppercase">What we offer</h1>
-    <p class="text-white">
-        We're committed to deliver top-tier tyres and exceptional service that
-        keep you safe and satisfied
-    </p>
-    <div class="grid grid-cols-1 md:grid-cols-3">
+<section class="py-12">
+    <div class="mx-auto max-w-screen-xl px-4 text-center">
+        <h1 class="yellowText text-4xl sm:text-5xl italic uppercase">
+            What we offer
+        </h1>
+        <p class="text-white mt-3 max-w-2xl mx-auto">
+            We're committed to deliver top-tier tyres and exceptional service that
+            keep you safe and satisfied
+        </p>
+    </div>
+
+    <div class="mx-auto max-w-screen-xl px-4 mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
         {
             offers.map((offer) => (
                 <ImageCard

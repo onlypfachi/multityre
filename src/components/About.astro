@@ -1,5 +1,4 @@
 ---
-import { Image } from "astro:assets";
 import EnquiryForm from "./EnquiryForm.astro";
 
 interface Props {
@@ -10,23 +9,25 @@ interface Props {
 const { linkText, imageOne, imageTwo } = Astro.props;
 ---
 
-<section class="py-12  min-w-[24rem]">
-    <div class="sm:grid lg:grid-cols-2 p-4 min-w-[24rem]">
+<section class="py-12">
+    <div
+        class="mx-auto max-w-screen-xl px-4 grid gap-10 lg:grid-cols-2 items-start"
+    >
         <div>
-            <h1 class="text-white text-5xl italic max-w-xs yellowText pb-8">
+            <h1 class="text-white text-4xl sm:text-5xl italic yellowText pb-6">
                 About Our Tyre Family
             </h1>
-            <p class="text-white max-w-sm">
-                Multi Tyre was founded with a simple yet powerful mission: to
+            <p class="text-white max-w-prose">
+                MultiTyre was founded with a simple yet powerful mission: to
                 provide reliable, high-quality tyres that keep people safe on
                 the road. Driven by a passion for excellence and customer
                 service, ensuring drivers everywhere stay confident on their
                 journeys.
             </p>
-            <p class="text-white mt-8 underline">
+            <p class="text-white mt-6 underline">
                 <a href={linkText}>Learn more</a>
             </p>
         </div>
-        <EnquiryForm/>
+        <EnquiryForm />
     </div>
 </section>

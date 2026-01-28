@@ -9,15 +9,15 @@ const bgStyle = { backgroundImage: `url('/images/${imageURL}')` };
 const content = [
     {
         heading: "Location",
-        info: "",
+        info: "16 Harvey Brown, Milton Park, Harare",
     },
     {
         heading: "Email Address",
         info: "askme@multityre.co.zw",
     },
     {
-        heading: "Phone Number",
-        info: "(263) 772-288018",
+        heading: "Phone Numbers",
+        info: "0772 288 018 | 0774 442 922",
     },
 ];
 ---
@@ -26,16 +26,16 @@ const content = [
     class="bg-cover bg-no-repeat bg-gray-700 bg-blend-multiply"
     style={bgStyle}
 >
-    <div class="mx-auto max-w-screen-xl">
+    <div class="mx-auto max-w-screen-xl px-4">
         <h1
-            class="font-extrabold text-5xl yellowText tracking-wide uppercase italic p-36 max-w-xl"
+            class="font-extrabold text-4xl sm:text-5xl lg:text-6xl yellowText tracking-wide uppercase italic py-16 sm:py-24 lg:py-36 max-w-xl"
         >
             {callToAction}
         </h1>
         <div class="yellowBG grid grid-cols-1 md:grid-cols-3">
             {
                 content.map((item) => (
-                    <div class="p-12">
+                    <div class="p-8 sm:p-12">
                         <h1 class="uppercase text-2xl italic">
                             {item.heading}
                         </h1>

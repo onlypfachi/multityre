@@ -1,0 +1,119 @@
+---
+const pdfHref = "/pricing/multityre-pricelist.pdf";
+
+const standardBrands = [
+    "Windforce",
+    "Durun",
+    "Kapsen",
+    "Tracmax",
+    "Powertrac",
+    "LCH",
+    "Sportrak",
+    "Habilead",
+    "Z-Max",
+    "Haida",
+    "Sunfull",
+    "Joyroad",
+    "Greenlander",
+    "Compasal",
+];
+
+const premiumBrands = [
+    "Continental",
+    "Firestone",
+    "Bridgestone",
+    "Pirelli",
+    "Michelin",
+    "Yokohama",
+    "Dunlop",
+    "BF Goodrich",
+    "Goodyear",
+    "Hankook",
+];
+---
+
+<section class="py-12">
+    <div class="mx-auto max-w-screen-xl px-4 text-center">
+        <h1 class="yellowText text-4xl sm:text-5xl italic uppercase">
+            Price List
+        </h1>
+        <p class="text-white mt-3 max-w-2xl mx-auto">
+            Multiple choice, multiple brands. View our current pricing and
+            download the full PDF.
+        </p>
+
+        <!-- Brands Section -->
+        <div
+            class="mt-10 grid gap-8 md:grid-cols-2 text-left max-w-4xl mx-auto"
+        >
+            <!-- Standard Brands -->
+            <div class="bg-black/50 p-6 rounded-lg border border-gray-700">
+                <h2
+                    class="yellowText text-2xl sm:text-3xl italic uppercase mb-4"
+                >
+                    Our Brands
+                </h2>
+                <p class="text-gray-300 text-sm mb-3">
+                    Quality tyres at competitive prices
+                </p>
+                <div class="flex flex-wrap gap-2">
+                    {
+                        standardBrands.map((brand) => (
+                            <span class="bg-gray-800 text-white px-3 py-1 text-sm rounded">
+                                {brand}
+                            </span>
+                        ))
+                    }
+                </div>
+            </div>
+
+            <!-- Premium Brands -->
+            <div class="bg-black/50 p-6 rounded-lg border border-gray-700">
+                <h2
+                    class="yellowText text-2xl sm:text-3xl italic uppercase mb-4"
+                >
+                    Premium Brands
+                </h2>
+                <p class="text-gray-300 text-sm mb-3">Available on inquiry</p>
+                <div class="flex flex-wrap gap-2">
+                    {
+                        premiumBrands.map((brand) => (
+                            <span class="yellowBG text-black px-3 py-1 text-sm rounded font-medium">
+                                {brand}
+                            </span>
+                        ))
+                    }
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+                href={pdfHref}
+                target="_blank"
+                rel="noopener"
+                class="yellowBG px-6 py-3 text-black font-bold uppercase"
+            >
+                Open price list
+            </a>
+            <a
+                href={pdfHref}
+                download
+                class="yellowBG px-6 py-3 text-black font-bold uppercase"
+            >
+                Download PDF
+            </a>
+        </div>
+
+        <!-- PDF Preview (desktop only) -->
+        <div class="hidden md:block mt-10">
+            <div class="mx-auto max-w-4xl" style="aspect-ratio: 4 / 3;">
+                <iframe
+                    class="w-full h-full"
+                    src={pdfHref}
+                    title="MultiTyre price list"></iframe>
+            </div>
+        </div>
+    </div>
+</section>

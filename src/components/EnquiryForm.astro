@@ -1,25 +1,89 @@
 ---
+// Replace YOUR_FORM_ID with your actual Formspree form ID
+// Get one free at https://formspree.io - create form, copy the ID from the endpoint
+const formspreeEndpoint = "https://formspree.io/f/xlgbywal";
 ---
-<section class="flex flex-col h-[90%] w-[95%] mb-10 ">
-  <h1 class="yellowText mb-10 text-4xl uppercase">Enquiry Form</h1>
-  <form method="POST" class="yellowBG flex flex-col w-full gap-12 p-12">
-    <label class="text-xl flex flex-col md:flex-row md:gap-36">
-      Name:
-      <input type="text" name="name" required class="h-14 w-[115%] max-w-lg" placeholder="Name"/>
-    </label>
-    <label class="text-xl flex flex-col md:flex-row md:gap-36">
-      Email:
-      <input type="email" name="email" required class="h-14 w-[115%] max-w-lg" placeholder="your@address.com"/>
-    </label>
-    <label class="text-xl flex flex-col md:flex-row md:gap-14">
-      Phone Number:
-      <input type="text" name="phone-number" required class="h-14 w-[115%] max-w-lg" placeholder="+263 772 288 018"/>
 
-    </label>
-    <label class="flex flex-col text-xl md:flex-row md:gap-28">
-      Message:
-      <textarea name="message" required minlength="6" class="h-28 w-[115%] max-w-lg" placeholder="your message....."></textarea>
-    </label>
-    <button class="bg-black text-white py-3 px-6 w-64">Send</button>
-  </form>
+<section class="w-full mt-10 lg:mt-0">
+    <h1 class="yellowText mb-6 text-3xl sm:text-4xl uppercase">Enquiry Form</h1>
+    <form
+        method="POST"
+        action={formspreeEndpoint}
+        class="yellowBG flex flex-col w-full gap-6 p-6 sm:p-10"
+    >
+        <!-- Honeypot field for spam protection (hidden from users) -->
+        <input type="text" name="_gotcha" style="display:none" />
+
+        <!-- Redirect back to site after submission -->
+        <input
+            type="hidden"
+            name="_next"
+            value="https://multityre.co.zw/?submitted=true"
+        />
+
+        <!-- Custom subject line for the email -->
+        <input
+            type="hidden"
+            name="_subject"
+            value="New enquiry from MultiTyre website"
+        />
+
+        <label
+            class="text-lg sm:text-xl flex flex-col sm:flex-row sm:items-center sm:gap-6"
+        >
+            <span class="sm:w-40">Name:</span>
+            <input
+                type="text"
+                name="name"
+                required
+                class="h-12 w-full max-w-lg px-3"
+                placeholder="Name"
+            />
+        </label>
+
+        <label
+            class="text-lg sm:text-xl flex flex-col sm:flex-row sm:items-center sm:gap-6"
+        >
+            <span class="sm:w-40">Email:</span>
+            <input
+                type="email"
+                name="email"
+                required
+                class="h-12 w-full max-w-lg px-3"
+                placeholder="your@address.com"
+            />
+        </label>
+
+        <label
+            class="text-lg sm:text-xl flex flex-col sm:flex-row sm:items-center sm:gap-6"
+        >
+            <span class="sm:w-40">Phone Number:</span>
+            <input
+                type="tel"
+                name="phone"
+                required
+                class="h-12 w-full max-w-lg px-3"
+                placeholder="+263 772 288 018"
+            />
+        </label>
+
+        <label
+            class="text-lg sm:text-xl flex flex-col sm:flex-row sm:items-start sm:gap-6"
+        >
+            <span class="sm:w-40 sm:pt-2">Message:</span>
+            <textarea
+                name="message"
+                required
+                minlength="6"
+                class="min-h-28 w-full max-w-lg px-3 py-2"
+                placeholder="your message....."></textarea>
+        </label>
+
+        <button
+            type="submit"
+            class="bg-black text-white py-3 px-6 w-full sm:w-64 hover:bg-gray-800 transition-colors"
+        >
+            Send
+        </button>
+    </form>
 </section>
